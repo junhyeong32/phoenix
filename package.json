@@ -17,6 +17,7 @@
     "@vue-hero-icons/solid": "^1.7.2",
     "axios-mock-adapter": "^1.20.0",
     "mitt": "^3.0.0",
+    "moment": "^2.29.4",
     "query-string": "^7.1.1",
     "vue": "^3.2.25",
     "vue-router": "^4.0.12",

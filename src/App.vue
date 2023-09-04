@@ -1,12 +1,13 @@
 <template>
-  <router-view/>
+  <router-view />
 </template>
 
 <script>
-import {mapGetters, mapMutations} from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   name: "App",
+  components: {},
   computed: {
     ...mapGetters({}),
   },
@@ -15,11 +16,8 @@ export default {
   },
   methods: {
     ...mapMutations({}),
-
   },
-  created() {
-  },
+  created() {},
 };
 </script>
-
-
+<style></style>

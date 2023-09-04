@@ -1,35 +1,25 @@
 <template>
-  <div>
-    <GnbView/>
+  <layout>
     <router-view></router-view>
-  </div>
+  </layout>
 </template>
 
 <script>
-import GnbView from '@/components/GnbView.vue'
+import Layout from "../components/LayoutView.vue";
 export default {
-  name: 'HomeLayout',
+  name: "HomeLayout",
   components: {
-    GnbView,
+    Layout,
   },
-  props: {
-  },
+  props: {},
   data() {
-    return {
-    }
+    return {};
   },
-  computed: {
-  },
-  methods: {
-  },
-  created() {
-  },
-  mounted() {
-  },
-  beforeUnmount() {
-  }
-}
+  computed: {},
+  methods: {},
+  created() {},
+  mounted() {},
+  beforeUnmount() {},
+};
 </script>
-<style>
-</style>
-
+<style></style>

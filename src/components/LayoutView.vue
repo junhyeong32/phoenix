@@ -1,13 +1,18 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+  <header-view />
+  <slot />
+  <footer-view />
 </template>
 
 <script>
+import FooterView from "./FooterView.vue";
+import HeaderView from "./HeaderView.vue";
 export default {
-  name: "AuthLayout",
-  components: {},
+  name: "Layout",
+  components: {
+    FooterView,
+    HeaderView,
+  },
   props: {},
   data() {
     return {};
