@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col justify-center items-center">
+  <div class="flex flex-col justify-center items-center h-full">
     <section
-      class="banner flex flex-col justify-center items-center gap-[5rem] sm:h-[35rem] xs:h-[50rem]"
+      class="banner flex flex-col justify-center items-center gap-[5rem] sm:h-full xs:h-[50rem]"
     >
       <h1 class="md:text-[3.4rem] xs:text-[2.2rem] text-[white] font-bold">
         결제가 완료되었습니다.
@@ -48,6 +48,6 @@ export default {
   background-size: cover;
   object-fit: contain;
   width: 100vw;
-  min-height: 51vh;
+  min-height: 63vh;
 }
 </style>

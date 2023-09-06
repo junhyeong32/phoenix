@@ -38,23 +38,62 @@
         등의 시설을 갖춘 자체 투어 프로그램들이 핵심입니다.<br />
         여행과 체험의 진정한 의미를 깨닫고 가길 바라는 마음을 전달합니다.
       </div>
+      <div class="h-[500px]">
+        <vueper-slides>
+          <vueper-slide v-for="i in 5" :key="i" :title="i.toString()" />
+        </vueper-slides>
+      </div>
     </section>
 
     <section
       class="section_4 flex flex-col justify-start items-center py-[3.2rem]"
     >
       <p class="text-[1.7rem] text-[white]">Recommended Spot</p>
-      <h3 class="sm:text-[2.6rem] xs:text-[1.7rem] text-[white] font-bold">
+      <h3
+        class="sm:text-[2.6rem] xs:text-[1.7rem] text-[white] font-bold mb-[3.8rem]"
+      >
         풍요로운 땅, 전라남도 곡성으로 초대합니다.
       </h3>
+      <!-- :navigate-to="someLocalProperty" -->
+      <vueper-slides>
+        <vueper-slide v-for="i in 5" :key="i" :title="i.toString()" />
+      </vueper-slides>
 
-      <travel-card
-        v-for="(item, index) in section4_datasets"
-        :key="index"
-        :title="item.title"
-        :desc="item.desc"
-        :img="`/home/travel_${index + 1}.png`"
-      />
+      <vueper-slides
+        class="no-shadow"
+        :visible-slides="3"
+        slide-multiple
+        :gap="3"
+        :slide-ratio="1 / 4"
+        :dragging-distance="200"
+        :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }"
+      >
+        <vueper-slide
+          v-for="(slide, i) in section4_datasets"
+          :key="i"
+          :content="slide.content"
+          :style="'background-color: ' + ['#ff5252', '#42b983'][i % 2]"
+        >
+          >
+          <template v-slot:content>
+            <travel-card
+              :title="slide.title"
+              :desc="slide.desc"
+              :img="`/home/travel_${i + 1}.png`"
+            />
+          </template>
+        </vueper-slide>
+      </vueper-slides>
+
+      <!-- <vueper-slides>
+        <vueper-slide
+          v-for="(slide, i) in slides"
+          :key="i"
+          :title="slide.title"
+          :content="slide.content"
+        >
+        </vueper-slide>
+      </vueper-slides> -->
     </section>
 
     <section
@@ -148,6 +187,8 @@ import HeaderViewVue from "../../components/HeaderView.vue";
 import Card from "../../components/Card/home/index.vue";
 import CategoryCard from "../../components/Card/home/Category.vue";
 import TravelCard from "../../components/Card/home/Travel.vue";
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
 export default {
   name: "HomeView",
   components: {
@@ -155,6 +196,8 @@ export default {
     Card,
     CategoryCard,
     TravelCard,
+    VueperSlides,
+    VueperSlide,
   },
   props: {},
   data() {
@@ -230,6 +273,16 @@ export default {
           title: "각종 교육프로그램",
           desc: "각종 숙박시설 및 편의시설로 세미나, 워크샵 등\n다양한 프로그램을 진행할 수 있습니다.",
           img: "/home/education.png",
+        },
+      ],
+      slides: [
+        {
+          title: "Slide #1",
+          content: "Slide 1 content.",
+        },
+        {
+          title: "Slide #2",
+          content: "Slide 2 content.",
         },
       ],
     };

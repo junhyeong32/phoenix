@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="flex sm:h-[26.6rem] bg-[#d0d0d0] sm:pl-[7rem] xs:px-[2rem] pt-[5.6rem] pb-[2rem] gap-[53px]"
+    class="flex sm:h-[auto] bg-[#d0d0d0] sm:pl-[7rem] xs:px-[2rem] sm:py-[6rem] xs:py-[3rem] gap-[53px]"
   >
     <img src="/footer_logo.png" alt="logo" class="w-[198px] h-[64px]" />
 

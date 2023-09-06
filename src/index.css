@@ -59,14 +59,16 @@ table {
   font-size: 1rem;
 }
 
-input {
-  border: 1px solid gray; /* 다른 스타일 적용 */
-  outline: none; /* 파란색 외곽선 없애기 */
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #c6c6c6 !important;
 }
 
-input:focus {
-  outline: none; /* 포커스 시 파란색 외곽선 없애기 */
+textarea:focus {
+  outline: none !important; /* 포커스 시 파란색 외곽선 없애기 */
   box-shadow: none !important;
+  border-color: #c6c6c6 !important;
 }
 
 input[type="checkbox"] {

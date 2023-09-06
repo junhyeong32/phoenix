@@ -9,29 +9,73 @@
       </h1>
     </section>
 
+    <div class="md:hidden xs:flex flex-col sm:px-[5rem] xs:px-[2rem]">
+      <div
+        class="text-[1.7rem] font-bold border-b-[1px] border-[#BEBEBE] pb-[1rem]"
+      >
+        메뉴
+      </div>
+
+      <input
+        placeholder="검색어를 입력해 주세요."
+        type="text"
+        class="my-[1rem] border-[#DADADA] w-full"
+      />
+
+      <ul class="xs:flex flex-wrap justify-between items-center ml-[1.2rem]">
+        <li
+          v-for="(item, index) in menu_datasets"
+          :key="index"
+          style="list-style: disc"
+          class="mt-[0.6rem] cursor-pointer xs:w-[45%]"
+          :class="menu === item.menu && 'font-bold'"
+          @click="
+            () => {
+              menu = item.menu;
+              count = item.count;
+            }
+          "
+        >
+          {{ `${item.menu} (${item.count}개)` }}
+        </li>
+      </ul>
+    </div>
+
     <div
       class="w-full flex justify-center items-start md:px-[5rem] lg:px-[13.2rem] xs:px-[2rem] gap-[1.9rem] mt-[4.2rem]"
     >
       <div
-        class="flex md:flex-row xs:flex-col justify-center items-center gap-[3.2rem]"
+        class="md:flex xs:hidden md:flex-row xs:flex-col justify-center items-center gap-[3.2rem]"
       >
-        <ul>
-          <li
-            v-for="(item, index) in menu_datasets"
-            :key="index"
-            style="list-style: disc"
-            class="mt-[0.6rem] cursor-pointer"
-            :class="menu === item.menu && 'font-bold'"
-            @click="
-              () => {
-                menu = item.menu;
-                count = item.count;
-              }
-            "
+        <div class="flex flex-col">
+          <input
+            placeholder="검색어를 입력해 주세요."
+            type="text"
+            class="mb-[1.8rem] border-[#DADADA] lg:w-[282px] md:w-[16vw]"
+          />
+          <div
+            class="text-[1.7rem] font-bold border-b-[1px] border-[#BEBEBE] pb-[1.3rem]"
           >
-            {{ `${item.menu} (${item.count}개)` }}
-          </li>
-        </ul>
+            메뉴
+          </div>
+          <ul class="ml-[1.2rem] mt-[1.9rem]">
+            <li
+              v-for="(item, index) in menu_datasets"
+              :key="index"
+              style="list-style: disc"
+              class="mt-[0.6rem] cursor-pointer"
+              :class="menu === item.menu && 'font-bold'"
+              @click="
+                () => {
+                  menu = item.menu;
+                  count = item.count;
+                }
+              "
+            >
+              {{ `${item.menu} (${item.count}개)` }}
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="w-[90%] mb-[3rem]">

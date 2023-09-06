@@ -1,6 +1,8 @@
 <template>
   <header-view />
-  <slot />
+  <main class="min-h-[63vh]">
+    <slot />
+  </main>
   <footer-view />
 </template>
 
