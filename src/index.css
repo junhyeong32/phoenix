@@ -71,6 +71,12 @@ textarea:focus {
   border-color: #c6c6c6 !important;
 }
 
+select:focus {
+  outline: none !important; /* 포커스 시 파란색 외곽선 없애기 */
+  box-shadow: none !important;
+  border-color: #c6c6c6 !important;
+}
+
 input[type="checkbox"] {
   outline: none; /* 포커스 시 파란색 외곽선 없애기 */
   box-shadow: none !important;
@@ -78,6 +84,38 @@ input[type="checkbox"] {
 
 * {
   box-sizing: border-box;
+}
+
+.vueperslides,
+.vueperslides__inner,
+.vueperslides__parallax-wrapper {
+  height: 100%;
+}
+
+.vueperslides__bullets--outside .vueperslides__bullet .default {
+  border-color: #00c9d6;
+}
+
+.vuejs3-datepicker input {
+  border: none;
+  padding-left: 34px;
+}
+
+.vuejs3-datepicker__calendar-topbar {
+  background-color: #29979e;
+}
+
+.vuejs3-datepicker__calendar {
+  box-shadow: none;
+}
+
+.vuejs3-datepicker__calendar .cell.selected:hover,
+.vuejs3-datepicker__calendar .cell.selected {
+  background-color: #29979e !important;
+}
+
+.vuejs3-datepicker > .vuejs3-green {
+  left: -50px;
 }
 
 @media (min-width: 300px) and (max-width: 420px) {

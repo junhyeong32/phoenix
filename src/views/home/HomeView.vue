@@ -38,11 +38,6 @@
         등의 시설을 갖춘 자체 투어 프로그램들이 핵심입니다.<br />
         여행과 체험의 진정한 의미를 깨닫고 가길 바라는 마음을 전달합니다.
       </div>
-      <div class="h-[500px]">
-        <vueper-slides>
-          <vueper-slide v-for="i in 5" :key="i" :title="i.toString()" />
-        </vueper-slides>
-      </div>
     </section>
 
     <section
@@ -54,46 +49,39 @@
       >
         풍요로운 땅, 전라남도 곡성으로 초대합니다.
       </h3>
-      <!-- :navigate-to="someLocalProperty" -->
-      <vueper-slides>
-        <vueper-slide v-for="i in 5" :key="i" :title="i.toString()" />
-      </vueper-slides>
 
-      <vueper-slides
-        class="no-shadow"
-        :visible-slides="3"
-        slide-multiple
-        :gap="3"
-        :slide-ratio="1 / 4"
-        :dragging-distance="200"
-        :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }"
+      <div
+        class="w-full lg:h-[50rem] sm:h-[45rem] xs:p-[2rem] xs:h-[50rem] max-w-[1440px]"
       >
-        <vueper-slide
-          v-for="(slide, i) in section4_datasets"
-          :key="i"
-          :content="slide.content"
-          :style="'background-color: ' + ['#ff5252', '#42b983'][i % 2]"
+        <vueper-slides
+          class="no-shadow h-[43.4rem]"
+          :visible-slides="3"
+          slide-multiple
+          :slide-ratio="1 / 4"
+          :dragging-distance="70"
+          :arrows="false"
+          :gap="3"
+          :breakpoints="{
+            600: { visibleSlides: 1, slideMultiple: 1 },
+            900: { visibleSlides: 2, slideMultiple: 2 },
+          }"
         >
+          <vueper-slide
+            v-for="(slide, i) in section4_datasets"
+            :key="i"
+            class="h-[43.4rem]"
+            style="height: 43.4rem"
           >
-          <template v-slot:content>
-            <travel-card
-              :title="slide.title"
-              :desc="slide.desc"
-              :img="`/home/travel_${i + 1}.png`"
-            />
-          </template>
-        </vueper-slide>
-      </vueper-slides>
-
-      <!-- <vueper-slides>
-        <vueper-slide
-          v-for="(slide, i) in slides"
-          :key="i"
-          :title="slide.title"
-          :content="slide.content"
-        >
-        </vueper-slide>
-      </vueper-slides> -->
+            <template v-slot:content>
+              <travel-card
+                :title="slide.title"
+                :desc="slide.desc"
+                :img="`/home/travel_${2}.png`"
+              />
+            </template>
+          </vueper-slide>
+        </vueper-slides>
+      </div>
     </section>
 
     <section
@@ -226,17 +214,22 @@ export default {
       section4_datasets: [
         {
           title: "여행지 제목 입력",
-          desc: "어디서도 찾아 볼 수 없는\n특별한 여행을 원한다면-",
+          desc: `보여주고 싶은 사진에 설명 글을 입력해 주세요. 관리자 권한으로 사진 및 내용, 제목 수정/삭제 가능한 영역으로 부탁드립니다.`,
           img: "/home/product.png",
         },
         {
-          title: "여행상품",
-          desc: "어디서도 찾아 볼 수 없는\n특별한 여행을 원한다면-",
+          title: "여행지 제목 입력",
+          desc: `보여주고 싶은 사진에 설명 글을 입력해 주세요. 관리자 권한으로 사진 및 내용, 제목 수정/삭제 가능한 영역으로 부탁드립니다.`,
           img: "/home/program.png",
         },
         {
-          title: "여행상품",
-          desc: "어디서도 찾아 볼 수 없는\n특별한 여행을 원한다면-",
+          title: "여행지 제목 입력",
+          desc: `보여주고 싶은 사진에 설명 글을 입력해 주세요. 관리자 권한으로 사진 및 내용, 제목 수정/삭제 가능한 영역으로 부탁드립니다.`,
+          img: "/home/market.png",
+        },
+        {
+          title: "여행지 제목 입력",
+          desc: `보여주고 싶은 사진에 설명 글을 입력해 주세요. 관리자 권한으로 사진 및 내용, 제목 수정/삭제 가능한 영역으로 부탁드립니다.`,
           img: "/home/market.png",
         },
       ],

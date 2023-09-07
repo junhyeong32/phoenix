@@ -13,7 +13,7 @@
     </div>
 
     <button
-      class="w-[6.9rem] h-[3.7rem] rounded-[7px] bg-[white]"
+      class="w-[6.9rem] sm:h-[3.7rem] xs:h-[2.5rem] rounded-[7px] bg-[white]"
       @click="$router.push(path)"
     >
       둘러보기

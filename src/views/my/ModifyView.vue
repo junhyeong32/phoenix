@@ -24,13 +24,13 @@
                   type="password"
                   class="w-full max-w-[14.4rem] mr-[7px]"
                 />
-                <span class="sm:contents xs:hidden"
+                <span class="md:contents xs:hidden"
                   >* 영문 대소문자/숫자/특수문자 중 2종류 10~16자 또는 3종류
                   8~16자</span
                 >
-                <span class="xs:block sm:hidden mt-[5px]"
-                  >* 영문 대소문자/숫자/특수문자 중 2종류 10~16자 또는<br />
-                  3종류 8~16자</span
+                <span class="xs:block md:hidden mt-[10px]"
+                  >* 영문 대소문자/숫자/특수문자 중 2종류 10~16자 또는 3종류
+                  8~16자</span
                 >
               </td>
             </tr>
@@ -47,11 +47,33 @@
             <tr>
               <td>생일/성별</td>
               <td>
-                <select v-model="year" /><span class="mx-[5px]">년</span>
-                <select v-model="month" /><span class="mx-[5px]">월</span>
-                <select v-model="day" /><span class="mx-[5px]">일</span>
-                <input type="radio" />
-                <input type="radio" />
+                <div
+                  class="flex md:flex-row xs:flex-col md:items-center xs:items-start xs:gap-[1rem]"
+                >
+                  <div
+                    class="md:w-[auto] xs:w-full flex items-center md:gap-0 xs:gap-[0.5rem]"
+                  >
+                    <select
+                      v-model="year"
+                      class="md:w-[89px] xs:w-[33%]"
+                    /><span class="mx-[5px]">년</span>
+                    <select
+                      v-model="month"
+                      class="md:w-[89px] xs:w-[33%]"
+                    /><span class="mx-[5px]">월</span>
+                    <select v-model="day" class="md:w-[89px] xs:w-[33%]" /><span
+                      class="mx-[5px]"
+                      >일</span
+                    >
+                  </div>
+
+                  <div class="flex gap-[1rem] ml-[1rem]">
+                    <input type="radio" id="man" />
+                    <label for="man">남</label>
+                    <input type="radio" id="woman" />
+                    <label for="woman">여</label>
+                  </div>
+                </div>
               </td>
             </tr>
             <tr>
@@ -66,13 +88,17 @@
                       우편번호
                     </button>
                   </div>
-                  <div class="flex gap-[0.6rem]">
-                    <input v-model="address" type="text" class="w-[19.3rem]" />
+                  <div class="flex md:flex-row xs:flex-col gap-[0.6rem]">
                     <input
                       v-model="address"
                       type="text"
+                      class="md:w-[19.3rem] xs:w-full"
+                    />
+                    <input
+                      v-model="address_detail"
+                      type="text"
                       placeholder="상세주소를 입력해주세요."
-                      class="w-[29rem]"
+                      class="md:max-w-[33.4rem] md:w-full xs:w-full"
                     />
                   </div>
                 </div>
@@ -83,14 +109,28 @@
               <td>이메일</td>
               <td>
                 <div class="flex flex-col gap-[1rem]">
-                  <div class="flex gap-[0.6rem]">
-                    <input v-model="email" type="text" />
+                  <div
+                    class="flex items-center md:justify-start xs:justify-between gap-[0.6rem]"
+                  >
+                    <input
+                      v-model="email"
+                      type="text"
+                      class="xs:w-[45%] md:w-[auto]"
+                    />
                     <span>@</span>
-                    <input v-model="email_address" type="text" />
-                    <select>
+                    <input
+                      v-model="email_address"
+                      type="text"
+                      disabled
+                      class="xs:w-[45%] md:w-[auto] bg-[#F5F5F5]"
+                    />
+                    <select class="md:block xs:hidden">
                       <option>naver.com</option>
                     </select>
                   </div>
+                  <select class="md:hidden xs:block">
+                    <option>naver.com</option>
+                  </select>
                 </div>
               </td>
             </tr>
@@ -99,25 +139,43 @@
               <td>연락처</td>
               <td>
                 <div class="flex flex-col gap-[1rem]">
-                  <div class="flex gap-[0.6rem]">
-                    <input v-model="phone_1" type="text" />
+                  <div class="flex items-center gap-[0.6rem]">
+                    <input
+                      v-model="phone_1"
+                      type="text"
+                      class="xs:w-[33%] md:w-[auto]"
+                    />
                     <span>-</span>
-                    <input v-model="phone_2" type="text" />
+                    <input
+                      v-model="phone_2"
+                      type="text"
+                      class="xs:w-[33%] md:w-[auto]"
+                    />
                     <span>-</span>
-                    <input v-model="phone_3" type="text" />
+                    <input
+                      v-model="phone_3"
+                      type="text"
+                      class="xs:w-[33%] md:w-[auto]"
+                    />
                   </div>
                 </div>
               </td>
             </tr>
             <tr>
-              <td>수신동의</td>
+              <td style="padding-top: 5.6rem">수신동의</td>
               <td></td>
             </tr>
             <tr>
               <td>
-                <div class="flex flex-col">
-                  <input type="checkbox" />
-                  <input type="checkbox" />
+                <div class="flex flex-col gap-[2.4rem]">
+                  <div class="flex items-center gap-[1.4rem]">
+                    <input type="checkbox" class="text-[black]" />
+                    <p class="text-[1.4rem]">SNS</p>
+                  </div>
+                  <div class="flex items-center gap-[1.4rem]">
+                    <input type="checkbox" class="text-[black]" />
+                    <p class="text-[1.4rem] whitespace-nowrap">E-mail</p>
+                  </div>
                 </div>
               </td>
               <td></td>
@@ -167,6 +225,10 @@ export default {
       year: "",
       month: "",
       day: "",
+      address: "",
+      address_detail: "",
+      email: "",
+      email_address: "",
       phone_1: "",
       phone_2: "",
       phone_3: "",
@@ -182,10 +244,6 @@ export default {
 <style scoped>
 table {
   border-top: 1px solid #d4d1d1;
-}
-
-select {
-  min-width: 6.4rem;
 }
 
 input[type="text"],

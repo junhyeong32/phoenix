@@ -21,6 +21,7 @@
     "query-string": "^7.1.1",
     "vue": "^3.2.25",
     "vue-router": "^4.0.12",
+    "vuejs3-datepicker": "^1.0.19",
     "vueperslides": "^3.5.1",
     "vuex": "^4.0.2"
   },

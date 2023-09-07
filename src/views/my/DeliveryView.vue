@@ -22,7 +22,7 @@
               <td align="center">
                 <input
                   type="checkbox"
-                  class="w-[18px] h-[18px]"
+                  class="w-[18px] h-[18px] text-[black]"
                   style="border: 1px solid black"
                 />
               </td>

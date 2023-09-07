@@ -43,7 +43,15 @@
 
       <div class="flex flex-col items-center mb-[6.8rem]">
         <b class="text-[1.4rem]">체험을 원하시는 날짜를 선택해 주세요.</b>
-        <input type="date" />
+        <div class="mt-[20px]">
+          <datepicker
+            :full-month-name="true"
+            input-class="bg-[#ECEBEB] border-0 "
+            placeholder="YYYY-MM-DD"
+            :typeable="true"
+            :hideInput="false"
+          />
+        </div>
 
         <div class="flex sm:flex-row xs:flex-col gap-[2rem] mt-[3.57rem]">
           <div class="flex flex-col justify-center items-center gap-[1.6rem]">
@@ -63,11 +71,13 @@
             <b class="text-[1.7rem]">23만원</b>
             <button
               class="border-[1px] rounded-[6px] border-[#A0A0A0] text-[1.3rem] w-[23rem] h-[3.6rem]"
+              @click="$router.push('/my/cart')"
             >
               장바구니에 담기
             </button>
             <button
               class="bg-primary rounded-[6px] text-[white] text-[1.3rem] w-[23rem] h-[3.6rem]"
+              @click="$router.push('/my/cart')"
             >
               예약하기
             </button>
@@ -114,6 +124,7 @@ import HeaderViewVue from "../../components/HeaderView.vue";
 import Card from "../../components/Card/home/index.vue";
 import CategoryCard from "../../components/Card/home/Category.vue";
 import TravelCard from "../../components/Card/home/Travel.vue";
+import Datepicker from "vuejs3-datepicker";
 export default {
   name: "HomeView",
   components: {
@@ -121,6 +132,7 @@ export default {
     Card,
     CategoryCard,
     TravelCard,
+    Datepicker,
   },
   props: {},
   data() {

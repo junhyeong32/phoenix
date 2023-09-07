@@ -11,12 +11,24 @@
       </h1>
     </section>
 
-    <section class="w-full flex flex-col sm:px-[15.8rem] xs:px-[2rem]">
+    <section class="w-full flex flex-col md:px-[15.8rem] xs:px-[2rem]">
       <h3 class="text-[1.7rem] text-primary font-bold sm:mt-[2rem]">
         정원코리아 월드 시그니처 여행 패키지<br />
         국내 전라남도 곡성 심쿵 여행
       </h3>
-      <div class="product w-full h-[21rem] relative mt-[2.4rem]" />
+      <div class="relative">
+        <div class="product w-full h-[21rem] mt-[2.4rem]" />
+        <div
+          class="flex justify-center items-center absolute bg-[red] w-[60px] h-[36px] text-[white] text-[1rem] rounded-[8px] top-[18%] right-[100px]"
+        >
+          HOT
+        </div>
+        <div
+          class="flex justify-center items-center absolute bg-[#ED6400] w-[60px] h-[36px] text-[white] text-[1rem] rounded-[8px] top-[18%] right-[25px]"
+        >
+          BEST
+        </div>
+      </div>
       <b class="text-[1.5rem] mt-[1.9rem]"
         >제목영역 - 여행상품 정보를 입력해 주세요. (예) 1박 2일 관광+문화체험 /
         조식포함</b
@@ -29,11 +41,11 @@
       <b class="text-primary text-[1.5rem]"><br />30만원</b>
     </section>
 
-    <section class="w-full sm:px-[15.8rem] xs:px-[2rem]">
+    <section class="w-full md:px-[15.8rem] xs:px-[2rem]">
       <h3 class="text-[1.7rem] font-bold mt-[4.2rem] mb-[2.5rem]">해외여행</h3>
 
       <div
-        class="w-full grid sm:grid-cols-3 xs:grid-cols-1 gap-[1.2rem] mb-[18rem]"
+        class="w-full grid sm:grid-cols-3 xs:grid-cols-1 gap-[1.2rem] md:mb-[18rem] xs:mb-[9rem]"
       >
         <div
           v-for="(item, index) in product_datasets"
