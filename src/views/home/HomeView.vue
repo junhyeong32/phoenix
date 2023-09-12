@@ -1,171 +1,88 @@
 <template>
   <div class="flex flex-col space-y-2 justify-center items-center">
     <section class="banner flex flex-col justify-center items-center">
-      <p class="sm:text-[3.4rem] xs:text-[2.2rem] text-[white]">
-        풍요로운 땅, 전라남도 곡성으로
-      </p>
-      <h1 class="sm:text-[3.4rem] xs:text-[2.2rem] text-[white] font-bold">
-        나를 찾아 떠나는 가장 나다운 여행.
-      </h1>
-    </section>
-
-    <section
-      class="w-full min-h-[28rem] grid md:grid-cols-3 sm:grid-cols-1 md:px-[8.5rem] sm:px-[2rem] pb-[5.7rem] gap-[1.6rem] bg-[#D8FBF2]"
-    >
-      <card
-        v-for="(item, index) in section2_datasets"
-        :key="index"
-        :title="item.title"
-        :desc="item.desc"
-        :img="item.img"
-        :path="item.path"
-      />
-    </section>
-
-    <section
-      class="w-full h-[26rem] flex flex-col justify-center items-center gap-[4.6rem] bg-[#CEF5EC] px-[1.5rem]"
-    >
       <h1
-        class="sm:text-[2.6rem] xs:text-[1.7rem] text-primary font-[SANJUGotgam]"
+        class="sm:text-[2.5rem] xs:text-[2.2rem] font-bold text-[white] border-b-[3px] border-[#C71C23]"
       >
-        왜 정원코리아월드여야 할까요?
+        반드시 성공하고 싶은 사람들을 위한.
       </h1>
-
-      <div class="sm:text-[1.4rem] xs:text-[1rem] Class Properties text-center">
-        정원코리아월드를 선택해야 하는 이유는, 어디에서나 기획 가능한
-        천편일률적인 관광지 투어가 아닌<br />
-        실제 현지에 다양한 인프라를 확보하여 지역 특화 여행상품과 공방, 체험방
-        등의 시설을 갖춘 자체 투어 프로그램들이 핵심입니다.<br />
-        여행과 체험의 진정한 의미를 깨닫고 가길 바라는 마음을 전달합니다.
-      </div>
+      <h1 class="sm:text-[2.5rem] xs:text-[2.2rem] text-[white] font-bold">
+        Business Online Course
+      </h1>
+      <button
+        class="w-[13rem] h-[3.25rem] bg-primary text-[1rem] text-white mt-[1rem] rounded-[0.5rem] font-bold"
+      >
+        60일 무료강의 바로가기
+      </button>
     </section>
 
     <section
-      class="section_4 flex flex-col justify-start items-center py-[3.2rem]"
+      class="w-full min-h-[28rem] md:px-[8.8rem] sm:px-[2rem] pb-[5.7rem] bg-[#F1F1F1]"
     >
-      <p class="text-[1.7rem] text-[white]">Recommended Spot</p>
-      <h3
-        class="sm:text-[2.6rem] xs:text-[1.7rem] text-[white] font-bold mb-[3.8rem]"
-      >
-        풍요로운 땅, 전라남도 곡성으로 초대합니다.
-      </h3>
-
       <div
-        class="w-full lg:h-[50rem] sm:h-[45rem] xs:p-[2rem] xs:h-[50rem] max-w-[1440px]"
+        class="grid md:grid-cols-3 xs:grid-cols-1 justify-center items-center gap-[1.2rem] bg-white pl-[3.8rem] pr-[2.4rem]"
       >
-        <vueper-slides
-          class="no-shadow h-[43.4rem]"
-          :visible-slides="3"
-          slide-multiple
-          :slide-ratio="1 / 4"
-          :dragging-distance="70"
-          :arrows="false"
-          :gap="3"
-          :breakpoints="{
-            600: { visibleSlides: 1, slideMultiple: 1 },
-            900: { visibleSlides: 2, slideMultiple: 2 },
-          }"
+        <div
+          v-for="(item, index) in section2_datasets"
+          :key="index"
+          class="w-full min-h-[17.5rem] h-auto flex justify-center items-center gap-[2rem]"
         >
-          <vueper-slide
-            v-for="(slide, i) in section4_datasets"
-            :key="i"
-            class="h-[43.4rem]"
-            style="height: 43.4rem"
-          >
-            <template v-slot:content>
-              <travel-card
-                :title="slide.title"
-                :desc="slide.desc"
-                :img="`/home/travel_${2}.png`"
-              />
-            </template>
-          </vueper-slide>
-        </vueper-slides>
+          <img :src="item.img" alt="heritage" class="h-[7.4rem]" />
+          <div class="flex flex-col gap-[1.3rem]">
+            <b class="mt-[2.5rem]">
+              {{ item.title }}
+            </b>
+            <p>{{ item.desc }}</p>
+            <button>바로가기 ></button>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section
-      class="w-full flex flex-col items-center bg-[#EDF8F5] px-[1.5rem] pt-[4.4rem] pb-[7.85rem]"
-    >
-      <p class="sm:text-[1.7rem] xs:text-[1.2rem] text-[#008A93]">
-        Recommended Theme
-      </p>
-      <h1
-        class="sm:text-[2.6rem] xs:text-[1.7rem] text-[#008A93] mb-[2rem] font-bold"
-      >
-        다양한 주제의 여행을 추천해 드립니다.
-      </h1>
+      <h2 class="text-[1.5rem] text-[#C71C23] font-bold mt-[6rem] mb-[1.75rem]">
+        피닉스 온라인강의를 수강 추천 대상자
+      </h2>
 
-      <diV class="grid md:grid-cols-7 xs:grid-cols-3 gap-[1.2rem]">
-        <category-card
-          v-for="(item, index) in section5_datasets"
+      <div class="grid md:grid-cols-3 xs:grid-cols-1 gap-[1.6rem]">
+        <card
+          v-for="(item, index) in section3_datasets"
           :key="index"
           :title="item.title"
           :desc="item.desc"
-          :img="`/home/${index + 1}.png`"
+          :img="item.img"
+          :path="item.path"
         />
-      </diV>
-    </section>
-
-    <section
-      class="w-full flex flex-col items-center bg-[#F8F3ED] sm:px-[8.57rem] xs:px-[2rem] py-[3.7rem]"
-    >
-      <p class="sm:text-[1.7rem] xs:text-[1.2rem] text-[#9A714A]">
-        Special Activity
-      </p>
-      <h1
-        class="sm:text-[2.6rem] xs:text-[1.7rem] text-[#9A714A] font-bold text-center"
-      >
-        오직! 정원코리아에서만 할 수 있는<br />
-        곡성 현지 체험 프로그램
-      </h1>
-
-      <div class="grid md:grid-cols-3 sm:grid-cols-1 mt-[1.85rem] gap-[1.4rem]">
-        <div
-          v-for="(item, index) in section6_datasets"
-          :key="index"
-          :class="index === 1 && 'md:mt-[6.5rem]'"
-        >
-          <img :src="item.img" alt="program" class="xs:w-full mb-[1.8rem]" />
-          <b class="ml-[1rem] text-[1.1rem] text-[#9A714A]">{{ item.title }}</b>
-          <p class="ml-[1rem] text-[1.1rem] text-[#9A714A] whitespace-pre-wrap">
-            {{ item.desc }}
-          </p>
-        </div>
       </div>
     </section>
 
     <section
-      class="w-full h-[44.4rem] flex flex-col items-center gap-[4.6rem] section_7 xs:px-[5rem] md:px-[10rem] py-[4.6rem]"
+      class="w-full flex flex-col items-start bg-[#000] px-[1.5rem] pt-[4.4rem] pb-[7.85rem]"
     >
       <div
-        class="w-full flex sm:flex-row xs:flex-col justify-evenly gap-[2rem]"
+        class="flex justify-center items-center border-[1px] border-primary rounded-[3px] text-primary font-bold p-[0.8rem]"
       >
-        <div>
-          <p class="sm:text-[1.7rem] xs:text-[1.2rem] text-[#116824]">
-            Only Here!
-          </p>
-          <h1
-            class="sm:text-[2.6rem] xs:text-[1.7rem] text-[#116824] font-bold"
-          >
-            곡성 농부와의 직거래 장터
-          </h1>
-        </div>
-
-        <div>
-          <p class="text-[1.14rem] text-[#116824]">
-            풍요로운 땅 곡성에서 현지 농부가 직접 키우고 재배한 특산물을<br />
-            중간 유통 없이 직접 거래해 더욱 싱싱하고 저렴하게 거래해<br />
-            한층 더 뜻 깊은 기억도 가져가세요.
-          </p>
-
-          <button
-            class="border-[3px] border-[white] rounded-[10px] px-[1.8rem] py-[0.6rem] text-[white] mt-[2.2rem]"
-          >
-            구경하러 하기
-          </button>
-        </div>
+        Recommended Theme
       </div>
+      <h3 class="text-[1.5rem] text-white mb-[2rem] font-bold mt-[1.9rem]">
+        피닉스의 강의들을 통해 진정한 1조가치 기업으로의<br />
+        성장 방법과 동기부여를 얻어가세요.
+      </h3>
+
+      <diV class="grid md:grid-cols-2 xs:grid-cols-1 gap-[1.2rem]">
+        <heritage-card
+          v-for="(item, index) in section4_datasets"
+          :key="index"
+          :title="item.title"
+          :desc="item.desc"
+          :img="item.img"
+        />
+      </diV>
+
+      <h3 class="text-[1.5rem] text-white mb-[2rem] font-bold mt-[6.3rem]">
+        피닉스의 온라인 강의에서만 들을 수 있는 비즈니스 성공 원칙중<br />
+        일부를 소개합니다.
+      </h3>
+
+      <img src="/home/section.png" alt="section" />
     </section>
   </div>
 </template>
@@ -173,7 +90,7 @@
 <script>
 import HeaderViewVue from "../../components/HeaderView.vue";
 import Card from "../../components/Card/home/index.vue";
-import CategoryCard from "../../components/Card/home/Category.vue";
+import HeritageCard from "../../components/Card/home/Heritage.vue";
 import TravelCard from "../../components/Card/home/Travel.vue";
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
@@ -182,7 +99,7 @@ export default {
   components: {
     HeaderViewVue,
     Card,
-    CategoryCard,
+    HeritageCard,
     TravelCard,
     VueperSlides,
     VueperSlide,
@@ -192,90 +109,63 @@ export default {
     return {
       section2_datasets: [
         {
-          title: "여행상품",
-          desc: "어디서도 찾아 볼 수 없는\n특별한 여행을 원한다면-",
-          img: "/home/product.png",
-          path: "/product",
-        },
-        {
-          title: "현지 프로그램",
-          desc: "곡성 농부에게서 구매하는\n현지 특산물-",
+          title: "온라인 프로그램",
+          desc: "여러 업종의 고수들의 핵심만 뽑아서 알려 드리는 온라인 프로그램",
           img: "/home/program.png",
-          path: "/program",
+          path: "/",
         },
         {
-          title: "곡성 농부와 직거래 장터",
-          desc: "어디서도 찾아 볼 수 없는\n특별한 여행을 원한다면-",
-          img: "/home/market.png",
-          path: "/marketplace",
+          title: "트레이닝",
+          desc: "영업 현장에서 도움이 되는 과정",
+          img: "/home/training.png",
+          path: "/",
+        },
+        {
+          title: "진단솔루션",
+          desc: "우리 조직이 과연 제대로 성과를 내고 있는 게 맞는 건지 아닌지궁금한 분",
+          img: "/home/solution.png",
+          path: "/",
+        },
+      ],
+
+      section3_datasets: [
+        {
+          title: "중소기업 및 대기업",
+          desc: "기업 컨설팅",
+          img: "/home/company.png",
+        },
+        {
+          title: "조직, 팀 단위",
+          desc: "그룹 컨설팅",
+          img: "/home/group.png",
+        },
+        {
+          title: "중소기업 및 대기업",
+          desc: "기업 컨설팅",
+          img: "/home/startup.png",
         },
       ],
 
       section4_datasets: [
         {
-          title: "여행지 제목 입력",
-          desc: `보여주고 싶은 사진에 설명 글을 입력해 주세요. 관리자 권한으로 사진 및 내용, 제목 수정/삭제 가능한 영역으로 부탁드립니다.`,
-          img: "/home/product.png",
+          title: "상황을 유리하게 이끌어나가는 협상의 기술",
+          desc: "궁지에 몰린 쥐가 전세를 역전하는 방법. 소셜커머스 시장 1위를 지키기 위해 세웠던 전략, 글로벌 기업으로 도약을 위한 말레이시아 소셜커머스 인수 등 조직의 상황을 유리하게 이끌어나가기 위해서 택한 전략들을 낱낱이 공개합니다. 오직 피닉스 온라인 강의에서만!",
+          img: "/home/1.png",
         },
         {
-          title: "여행지 제목 입력",
-          desc: `보여주고 싶은 사진에 설명 글을 입력해 주세요. 관리자 권한으로 사진 및 내용, 제목 수정/삭제 가능한 영역으로 부탁드립니다.`,
-          img: "/home/program.png",
+          title: "하나의 목표를 바라보는 팀을 만드는 방법",
+          desc: "기업의 인재관과 좋은 인재를 모셔오는 방법부터 360도 성과 평가와 뚜렷한 보상의 방법, 조직을 해치는 사내 정치와 팀 이기주의 등 조직을 관리하는 1조 기업 조직을 다루는 방식들을 살펴봅니다.",
+          img: "/home/2.png",
         },
         {
-          title: "여행지 제목 입력",
-          desc: `보여주고 싶은 사진에 설명 글을 입력해 주세요. 관리자 권한으로 사진 및 내용, 제목 수정/삭제 가능한 영역으로 부탁드립니다.`,
-          img: "/home/market.png",
+          title: "위기 관리에 대처하는 의사결정 방법",
+          desc: "생각지도 못한 폭발적인 시장의 반응으로 회사가 가진 돈의 절반 이상을 고객에게 환불해줘야 하는 위기를 맞았는데요. 어떻게 위기를 극복했을까요? 영화보다도 더 영화 같은 사례를 통해 위기를 극복할 때 반드시 알아야 할 '이것'을 알려드립니다.",
+          img: "/home/3.png",
         },
         {
-          title: "여행지 제목 입력",
-          desc: `보여주고 싶은 사진에 설명 글을 입력해 주세요. 관리자 권한으로 사진 및 내용, 제목 수정/삭제 가능한 영역으로 부탁드립니다.`,
-          img: "/home/market.png",
-        },
-      ],
-
-      section5_datasets: [
-        { title: "캠핑여행", desc: "자연과 함께" },
-        { title: "골프여행", desc: "넓고 푸르른" },
-        { title: "넓고 푸르른", desc: "평생 잊지못할" },
-        { title: "커플여행", desc: "둘만의 기억" },
-        { title: "가족여행", desc: "함께 쌓는 추억" },
-        { title: "힐링여행", desc: "자유로운 여행" },
-        { title: "자유여행", desc: "구애받지 않는" },
-        { title: "국내여행", desc: "새로운 발견" },
-        { title: "해외여행", desc: "안전보장" },
-        { title: "장기투숙", desc: "오래 머무르다" },
-        { title: "기차여행", desc: "그림같은 풍경" },
-        { title: "맛집여행", desc: "맛따라 멋따라" },
-        { title: "역사탐방", desc: "흥미진진하게" },
-        { title: "교육여행", desc: "배워가는 여행" },
-      ],
-
-      section6_datasets: [
-        {
-          title: "목공예체험",
-          desc: "남녀노소 누구나 내 손으로 직접 설계하고 만들며\n오감으로 즐길 수 있는 체험 활동입니다.",
-          img: "/home/woodwork.png",
-        },
-        {
-          title: "바리스타체험",
-          desc: "곡성 목공예&커피체험관은,바리스타 시험을 볼\n수 있는 바리스타 시험 검정장이며 월드커피바리\n스타협회와 함께합니다.",
-          img: "/home/barista.png",
-        },
-        {
-          title: "각종 교육프로그램",
-          desc: "각종 숙박시설 및 편의시설로 세미나, 워크샵 등\n다양한 프로그램을 진행할 수 있습니다.",
-          img: "/home/education.png",
-        },
-      ],
-      slides: [
-        {
-          title: "Slide #1",
-          content: "Slide 1 content.",
-        },
-        {
-          title: "Slide #2",
-          content: "Slide 2 content.",
+          title: "좋은 창업 팀 구성, 아이디어를 검증하는 방법",
+          desc: "사업 아이템을 정하셨나요? 조금이라도 실험해 보기 위한 조직을 모으기 위해 이리저리 뛰어 다니다보면 느끼게 되는 것. '시간이 부족하구나!' 빨리 성장하고 싶은데 내부에 돈도, 사람도 부족해 어떻게 해야할 지 모르겠다면? 코칭받은 전략들을 거울삼아 조직의 성장 속도를 높일 수 있습니다. 시간은, 금입니다!",
+          img: "/home/4.png",
         },
       ],
     };
@@ -289,12 +179,7 @@ export default {
 </script>
 <style scoped>
 .banner {
-  background: linear-gradient(
-      180deg,
-      rgba(22, 68, 68, 0.32) 58.92%,
-      #d8fbf2 100%
-    ),
-    url("/home/banner.png"), lightgray 50%;
+  background: url("/home/banner.png");
   background-position: center;
   background-size: cover;
   object-fit: contain;

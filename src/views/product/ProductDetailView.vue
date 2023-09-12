@@ -78,7 +78,7 @@
 <script>
 import HeaderViewVue from "../../components/HeaderView.vue";
 import Card from "../../components/Card/home/index.vue";
-import CategoryCard from "../../components/Card/home/Category.vue";
+
 import TravelCard from "../../components/Card/home/Travel.vue";
 import Datepicker from "vuejs3-datepicker";
 export default {
@@ -86,7 +86,7 @@ export default {
   components: {
     HeaderViewVue,
     Card,
-    CategoryCard,
+
     TravelCard,
     Datepicker,
   },

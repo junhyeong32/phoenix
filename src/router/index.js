@@ -4,14 +4,21 @@ import HomeView from "../views/home/HomeView.vue";
 import AuthLayout from "../components/AuthLayout.vue";
 import SignInView from "../views/auth/SignInView.vue";
 import SignUpView from "../views/auth/SignUpView.vue";
-import ProductView from "../views/product/ProductView.vue";
-import ProductDetailView from "../views/product/ProductDetailView.vue";
+import DiagnosisView from "../views/diagnosis/DiagnosisView.vue";
+import OnlineView from "../views/online/OnlineView.vue";
+import AbilityView from "../views/online/AbilityView.vue";
+import AllAbilityView from "../views/online/AllAbilityView.vue";
+import ResultView from "../views/online/ResultView.vue";
+
+import CartView from "../views/payment/CartView.vue";
+import OrderView from "../views/payment/OrderView.vue";
+
 import ProgramView from "../views/program/ProgramView.vue";
 import MarketplaceView from "../views/marketplace/MarketplaceView.vue";
 import MarketplaceDetailView from "../views/marketplace/MarketplaceDetailView.vue";
 import MyView from "../views/my/MyView.vue";
 import PaymentView from "../views/my/PaymentView.vue";
-import CartView from "../views/my/CartView.vue";
+
 import DeliveryView from "../views/my/DeliveryView.vue";
 import FinishView from "../views/my/FinishView.vue";
 import ModifyView from "../views/my/ModifyView.vue";
@@ -49,33 +56,43 @@ const routes = [
     ],
   },
   {
-    path: "/product",
-    name: "ProductLayout",
+    path: "/diagnosis",
+    name: "DiagnosisLayout",
     component: HomeLayout,
-    redirect: "/product",
+    redirect: "/diagnosis",
     children: [
       {
-        path: "/product",
-        name: "ProductView",
-        component: ProductView,
-      },
-      {
-        path: "/product/detail",
-        name: "ProductDetailView",
-        component: ProductDetailView,
+        path: "/diagnosis",
+        name: "DiagnosisView",
+        component: DiagnosisView,
       },
     ],
   },
   {
-    path: "/program",
-    name: "ProgramLayout",
+    path: "/online",
+    name: "OnlineLayout",
     component: HomeLayout,
-    redirect: "/program",
+    redirect: "/online",
     children: [
       {
-        path: "/program",
-        name: "ProgramView",
-        component: ProgramView,
+        path: "/online",
+        name: "OnlineView",
+        component: OnlineView,
+      },
+      {
+        path: "/online/ability",
+        name: "AbilityView",
+        component: AbilityView,
+      },
+      {
+        path: "/online/all-ability",
+        name: "AllAbilityView",
+        component: AllAbilityView,
+      },
+      {
+        path: "/online/result",
+        name: "ResultView",
+        component: ResultView,
       },
     ],
   },
@@ -98,6 +115,24 @@ const routes = [
     ],
   },
   {
+    path: "/payment",
+    name: "PaymentLayout",
+    component: HomeLayout,
+    redirect: "/payment",
+    children: [
+      {
+        path: "/payment/cart",
+        name: "CartView",
+        component: CartView,
+      },
+      {
+        path: "/payment/order",
+        name: "OrderView",
+        component: OrderView,
+      },
+    ],
+  },
+  {
     path: "/my",
     name: "MypageLayout",
     component: HomeLayout,
@@ -112,11 +147,6 @@ const routes = [
         path: "/my/payment",
         name: "PaymentView",
         component: PaymentView,
-      },
-      {
-        path: "/my/cart",
-        name: "CartView",
-        component: CartView,
       },
       {
         path: "/my/delivery",

@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex justify-between items-center w-full px-[8.6rem] xs:px-[1.5rem] py-[0.8rem] relative"
+    class="flex justify-between items-center w-full xs:px-[1.5rem] py-[0.8rem] relative"
   >
     <img
       src="/logo.png"
@@ -18,31 +18,22 @@
       >
       <router-link
         :class="
-          $router.currentRoute.value.path === '/product' && 'text-primary'
+          $router.currentRoute.value.path === '/diagnosis' && 'text-primary'
         "
-        :to="'/product'"
-        >여행상품</router-link
+        :to="'/diagnosis'"
+        >온라인 진단</router-link
       >
       <router-link
-        :class="
-          $router.currentRoute.value.path === '/program' && 'text-primary'
-        "
-        :to="'/program'"
-        >현지프로그램</router-link
+        :class="$router.currentRoute.value.path === '/online' && 'text-primary'"
+        :to="'/online'"
+        >온라인 프로그램</router-link
       >
       <router-link
         :class="
           $router.currentRoute.value.path === '/marketplace' && 'text-primary'
         "
         :to="'/marketplace'"
-        >직거래장터</router-link
-      >
-      <router-link
-        :class="
-          $router.currentRoute.value.path === '/inquiry' && 'text-primary'
-        "
-        :to="'/inquiry'"
-        >상담문의</router-link
+        >훈련 프로그램</router-link
       >
       <router-link
         :to="'/my'"
@@ -81,8 +72,8 @@
         @click="open = !open"
       />
       <router-link :to="'/home'">홈</router-link>
-      <router-link :to="'/product'">여행상품</router-link>
-      <router-link :to="'/program'">현지프로그램</router-link>
+      <router-link :to="'/diagnosis'">여행상품</router-link>
+      <router-link :to="'/online'">현지프로그램</router-link>
       <router-link :to="'/marketplace'">직거래장터</router-link>
       <router-link :to="'/inquiry'">상담문의</router-link>
       <router-link :to="'/my'">마이 페이지</router-link>

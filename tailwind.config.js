@@ -4,7 +4,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     colors: {
-      primary: "#29979E",
+      primary: "#C71C23;",
+      black: "#",
+      white: "#FFF",
     },
     screens: {
       xs: "300px",

@@ -1,23 +1,14 @@
 <template>
   <div
-    class="w-full h-[20.7rem] flex flex-col justify-between home-card px-[2.8rem] py-[2.3rem]"
+    class="w-full h-[16.5rem] flex flex-col justify-center items-center home-card rounded-[1rem]"
     :style="`background-image:url(${img})`"
   >
-    <div class="flex flex-col">
-      <h1 class="text-[2.3rem] text-[white] font-bold">
-        {{ title }}
-      </h1>
-      <p class="text-[1rem] text-[white] whitespace-pre-wrap mt-[1rem]">
-        {{ desc }}
-      </p>
-    </div>
-
-    <button
-      class="w-[6.9rem] sm:h-[3.7rem] xs:h-[2.5rem] rounded-[7px] bg-[white]"
-      @click="$router.push(path)"
-    >
-      둘러보기
-    </button>
+    <b class="text-[1.25rem] text-[white] font-bold">
+      {{ title }}
+    </b>
+    <p class="text-[1.25rem] text-[white]">
+      {{ desc }}
+    </p>
   </div>
 </template>
 
@@ -59,6 +50,5 @@ export default {
   background-position: center;
   background-size: cover;
   object-fit: contain;
-  border-radius: 12px;
 }
 </style>
