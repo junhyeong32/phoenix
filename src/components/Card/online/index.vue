@@ -29,11 +29,13 @@
         </div>
         <button
           class="w-full h-[3rem] text-[1.3rem] font-bold text-white bg-[#555]"
+          @click="$router.push('/payment/cart')"
         >
           장바구니 담기
         </button>
         <button
           class="w-full h-[3rem] text-[1.3rem] font-bold text-white bg-primary"
+          @click="$router.push('/payment/order')"
         >
           구매하기
         </button>

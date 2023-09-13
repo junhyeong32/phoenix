@@ -97,7 +97,7 @@
           </div>
         </div>
         <div class="flex gap-[1rem]">
-          <input type="checkbox" class="mt-[4px]" />
+          <input type="checkbox" class="md:mt-0 xs:mt-[4px]" />
           <b>강의 및 결제정보를 확인했으며, 이에 동의합니다. (필수)</b>
         </div>
 
