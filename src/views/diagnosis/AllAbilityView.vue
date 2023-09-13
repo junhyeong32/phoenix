@@ -3,12 +3,12 @@
     class="flex flex-col items-center bg-[#E9E3E3] md:px-[120px] xs:px-[2rem] pt-[5.1rem] pb-[5.8rem]"
   >
     <div
-      class="w-full flex justify-center items-center text-[3rem] text-[#630606] font-bold relative"
+      class="w-full flex justify-center items-center md:text-[3rem] xs:text-[2rem] text-[#630606] font-bold relative"
     >
       <img
         src="/online/arrow.png"
         alt="arrow"
-        class="absolute left-0 cursor-pointer"
+        class="absolute left-0 cursor-pointer w-[2.4rem]"
         @click="$router.back()"
       />
       역량 검사
@@ -21,7 +21,7 @@
     </div>
 
     <div
-      class="w-full h-[6.8rem] flex justify-between items-center text-[1.9rem] font-bold bg-white rounded-[9px] mt-[4.7rem] px-[2.7rem]"
+      class="w-full h-[6.8rem] flex justify-between items-center md:text-[1.9rem] xs:text-[1.3rem] font-bold bg-white rounded-[9px] mt-[4.7rem] px-[2.7rem]"
     >
       <span>Q1. 질문을 입력해 주세요. (5지선다형)</span>
       <button
@@ -45,7 +45,7 @@
     </div>
 
     <div
-      class="w-full h-[6.8rem] flex justify-between items-center text-[1.9rem] font-bold bg-white rounded-[9px] mt-[2.9rem] px-[2.7rem]"
+      class="w-full h-[6.8rem] flex justify-between items-center md:text-[1.9rem] xs:text-[1.3rem] font-bold bg-white rounded-[9px] mt-[2.9rem] px-[2.7rem]"
     >
       <span>Q2. 질문을 입력해 주세요. (점수형)</span>
       <button
@@ -68,7 +68,7 @@
     </div>
 
     <div
-      class="w-full h-[6.8rem] flex justify-between items-center text-[1.9rem] font-bold bg-white rounded-[9px] mt-[2.9rem] px-[2.7rem]"
+      class="w-full h-[6.8rem] flex justify-between items-center md:text-[1.9rem] xs:text-[1.3rem] font-bold bg-white rounded-[9px] mt-[2.9rem] px-[2.7rem]"
     >
       <span>Q3. 질문을 입력해 주세요. (Yes or No형)</span>
       <button
@@ -83,13 +83,11 @@
     >
       <button
         class="w-[50%] h-[5rem] flex justify-center items-center bg-primary text-white text-[1.3rem]"
-        @click="$router.push('/online/all-ability')"
       >
         그렇다
       </button>
       <button
         class="w-[50%] h-[5rem] flex justify-center items-center border-[1px] border-[#979797] text-[1.3rem]"
-        @click="$router.push('/online/all-ability')"
       >
         아니다
       </button>
@@ -97,10 +95,14 @@
 
     <button
       class="w-[18.3rem] h-[5rem] flex justify-center items-center bg-[#B4696D] rounded-[1rem] text-[white] text-[1.7rem] mt-[4.3rem]"
-      @click="$router.push('/online/result')"
+      @click="$router.push('/diagnosis/result')"
     >
       다음
-      <img src="/online/right-arrow.png" alt="right-arrow" class="ml-[10px]" />
+      <img
+        src="/online/right-arrow.png"
+        alt="right-arrow"
+        class="ml-[10px] w-[1.3rem]"
+      />
     </button>
   </div>
 </template>

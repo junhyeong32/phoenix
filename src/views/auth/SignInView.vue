@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center items-center mt-[6.3rem] px-[2rem]">
+  <div class="flex flex-col justify-center items-center mt-[6.1rem] px-[2rem]">
     <img
       src="/login_logo.png"
       alt="logo"
@@ -7,10 +7,10 @@
       class="cursor-pointer"
     />
     <div
-      class="w-full max-w-[56.5rem] h-1 border-b-2 mt-[7rem] mb-[4rem] border-[#C1C1C1;]"
+      class="w-full max-w-[56.5rem] h-1 border-b-2 mt-[5rem] mb-[4rem] border-[#C1C1C1;]"
     />
     <div class="flex flex-col max-w-[30.8rem] w-full">
-      <h1 class="text-[2rem] font-bold">로그인</h1>
+      <h1 class="text-[1.8rem] font-bold">로그인</h1>
       <input type="text" v-model="id" placeholder="아이디" class="mt-[6rem]" />
       <input
         type="password"
@@ -19,28 +19,37 @@
         class="mt-[3.6rem]"
       />
 
-      <div class="flex gap-[3.6rem] mt-[2.9rem]"></div>
+      <div class="flex gap-[2.2rem] mt-[2.9rem]">
+        <div class="flex items-ceter gap-[7px]">
+          <input type="checkbox" class="w-[1.8rem] h-[1.8rem] text-primary" />
+          <span>아이디 저장</span>
+        </div>
+        <div class="flex items-ceter gap-[7px]">
+          <input type="checkbox" class="w-[1.8rem] h-[1.8rem] text-primary" />
+          <span>로그인 상태 유지</span>
+        </div>
+      </div>
 
       <button
-        class="w-full h-[5rem] bg-primary text-[white] text-[1.7rem] mt-[5rem]"
+        class="w-full h-[5rem] bg-primary text-[white] text-[1.5rem] mt-[4.4rem]"
         @click="click"
       >
         로그인
       </button>
-      <router-link :to="'home'" class="text-[1.4rem] mt-[1.7rem]"
+      <router-link :to="'home'" class="text-[1.3rem] mt-[1.5rem]"
         >아이디/비밀번호 찾기</router-link
       >
 
-      <h2 class="text-[1.7rem] font-bold mt-[8.8rem]">
+      <h2 class="text-[1.5rem] font-bold mt-[7.6rem]">
         아직 회원이 아니신가요?
       </h2>
-      <p class="text-[1.4rem] mt-[1.7rem]">
-        회원가입 하시고 정원코리아월드의<br />
-        다채로운 여행/체험상품들을 만나 보세요.
+      <p class="text-[1.3rem] mt-[1.5rem]">
+        회원가입 하시고 피닉스컨설팅의<br />
+        다양한 비즈니스 성공 방법론들을 만나 보세요.
       </p>
 
       <button
-        class="w-full h-[5rem] bg-[black] text-[white] text-[1.7rem] mt-[3.2rem] mb-[11.5rem]"
+        class="w-full h-[5rem] bg-[black] text-[white] text-[1.5rem] mt-[3.2rem] mb-[11.5rem]"
         @click="$router.push('/auth/signup')"
       >
         회원가입
@@ -74,10 +83,28 @@ export default {
 };
 </script>
 <style scoped>
-input {
+input[type="text"],
+input[type="password"] {
   border: none;
   border-bottom: 1px solid #000;
   color: #848484 !important;
-  font-size: 1.3rem !important;
+  font-size: 1.1rem !important;
+}
+
+input[type="checkbox"] {
+  width: 1.42rem !important;
+  height: 1.42rem;
+  border: 1px solid #000;
+  color: #c71c23 !important;
+  outline: none;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  border: none;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #c71c23 !important;
+  border: none !important;
+  outline: none;
 }
 </style>

@@ -11,46 +11,51 @@
         class="w-full text-[1.3rem] font-bold border-b-[1px] border-black pb-[1.3rem]"
       />
 
-      <table class="w-full">
-        <thead>
-          <tr>
-            <th>상품명</th>
-            <th>가격</th>
-            <th>수강기간</th>
-            <th>수강방법</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(item, index) in cart_datasets" :key="index">
-            <td align="center">
-              <div
-                class="w-full flex sm:flex-row xs:flex-col justify-between items-center"
-              >
+      <div class="w-full overflow-x-scroll">
+        <table class="w-full">
+          <thead>
+            <tr>
+              <th>상품명</th>
+              <th>가격</th>
+              <th>수강기간</th>
+              <th>수강방법</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(item, index) in cart_datasets" :key="index">
+              <td align="center">
                 <div
-                  class="flex sm:flex-row xs:flex-col my-[2.9rem] gap-[2.1rem]"
+                  class="lg:w-[auto] xs:w-[max-content] flex items-center md:gap-[2.8rem] xs:gap-[2.8rem]"
                 >
-                  <img :src="item.img" alt="travel_product" />
-                  <div class="flex flex-col">
-                    <b class="text-[1.3rem]">{{ item.category }}</b>
-                    <p class="text-[1.3rem] text-[#747474]">
-                      예약날짜: {{ item.product }}
-                    </p>
+                  <img
+                    :src="item.img"
+                    alt="travel_product"
+                    class="w-[12.7rem]"
+                  />
+                  <div
+                    class="flex flex-col justify-between mt-[2.9rem] gap-[2.1rem]"
+                  >
+                    <div class="flex flex-col items-start">
+                      <b class="text-[1.3rem]">{{ item.category }}</b>
+                      <p class="text-[1.3rem] text-[#747474] text-start">
+                        {{ item.product }}
+                      </p>
+                    </div>
+                    <button
+                      class="w-[64px] h-[32px] border-[1px] border-[#B1B1B1] md:mb-0 xs:mb-[2rem]"
+                    >
+                      삭제
+                    </button>
                   </div>
                 </div>
-
-                <button
-                  class="w-[64px] h-[32px] border-[1px] border-[#B1B1B1] md:mb-0 xs:mb-[2rem]"
-                >
-                  삭제
-                </button>
-              </div>
-            </td>
-            <td align="center">{{ item.price }}</td>
-            <td align="center">{{ item.date }}</td>
-            <td align="center">{{ item.method }}</td>
-          </tr>
-        </tbody>
-      </table>
+              </td>
+              <td align="center">{{ item.price }}</td>
+              <td align="center">{{ item.date }}</td>
+              <td align="center">{{ item.method }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <div
         class="w-full flex sm:flex-row xs:flex-col justify-between items-center"

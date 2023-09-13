@@ -1,52 +1,32 @@
 <template>
   <div
-    class="h-screen flex flex-col items-center bg-[#E9E3E3] md:px-[120px] pt-[5.1rem]"
+    class="sm:h-screen xs:h-[67vh] flex flex-col items-center bg-[#E9E3E3] md:px-[120px] xs:px-[2rem] pt-[5.1rem]"
   >
     <div
-      class="w-full flex justify-center items-center text-[3rem] text-[#630606] font-bold relative"
+      class="w-full flex justify-center items-center md:text-[3rem] xs:text-[2rem] text-[#630606] font-bold relative"
     >
       <img
         src="/online/arrow.png"
         alt="arrow"
-        class="absolute left-0 cursor-pointer"
+        class="absolute left-0 cursor-pointer w-[2.4rem]"
         @click="$router.back()"
       />
-      온라인 진단 검사
+      진단결과
     </div>
 
     <div
-      class="w-full h-[6.8rem] flex items-center text-[1.9rem] font-bold bg-white rounded-[9px] mt-[4.7rem] px-[2.7rem]"
+      class="w-full md:h-[27.6rem] xs:h-[35rem] flex flex-col justify-center items-center text-[1.5rem] bg-white rounded-[9px] mt-[4.7rem] px-[2.7rem]"
     >
-      Q. 나는 이런 분야에 관심이 있다. (중복 선택 가능)
+      <img src="/online/finish.png" alt="arrow" />
+      <b class="mt-[3.8rem]">진단이 성공적으로 완료되었습니다. </b>
+      <p class="text-center">
+        고객님의 역량 진단에 관한 보고서는 자동으로 pdf 다운로드가
+        진행됩니다.<br /><br />
+      </p>
+      <p class="text-center">
+        검사받은 PC의 [다운로드] 혹은 [Download]폴더에서 확인하실 수 있습니다.
+      </p>
     </div>
-
-    <div class="grid md:grid-cols-6 xs:grid-cols-2 mt-[3.8rem] gap-[1.5rem]">
-      <div
-        v-for="(item, index) in test_datasets"
-        :key="index"
-        class="w-full min-h-[9.1rem] h-auto flex justify-center items-center rounded-[1rem] px-[1rem] py-[1.6rem] text-[1.6rem] text-center font-bold cursor-pointer relative"
-        :class="
-          test_datasets[index].is_check ? 'bg-primary text-white' : 'bg-white'
-        "
-        @click="toggleCheck(item)"
-      >
-        {{ item.text }}
-        <img
-          src="/online/check.png"
-          alt="check "
-          class="absolute right-[10px] top-[10px]"
-          v-if="test_datasets[index].is_check"
-        />
-      </div>
-    </div>
-
-    <button
-      class="w-[13rem] h-[5rem] flex justify-center items-center bg-[#B4696D] rounded-[1rem] text-[white] text-[1.7rem] mt-[4.3rem]"
-      @click="$router.push('/online/ability')"
-    >
-      다음
-      <img src="/online/right-arrow.png" alt="right-arrow" class="ml-[10px]" />
-    </button>
   </div>
 </template>
 

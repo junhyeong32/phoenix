@@ -96,28 +96,6 @@ input[type="checkbox"] {
   border-color: #00c9d6;
 }
 
-.vuejs3-datepicker input {
-  border: none;
-  padding-left: 34px;
-}
-
-.vuejs3-datepicker__calendar-topbar {
-  background-color: #29979e;
-}
-
-.vuejs3-datepicker__calendar {
-  box-shadow: none;
-}
-
-.vuejs3-datepicker__calendar .cell.selected:hover,
-.vuejs3-datepicker__calendar .cell.selected {
-  background-color: #29979e !important;
-}
-
-.vuejs3-datepicker > .vuejs3-green {
-  left: -50px;
-}
-
 @media (min-width: 300px) and (max-width: 420px) {
   html {
     font-size: 10px;

@@ -1,21 +1,21 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeLayout from "../components/HomeLayout.vue";
+import MyPageLayout from "../components/MyPageLayout.vue";
 import HomeView from "../views/home/HomeView.vue";
 import AuthLayout from "../components/AuthLayout.vue";
 import SignInView from "../views/auth/SignInView.vue";
 import SignUpView from "../views/auth/SignUpView.vue";
 import DiagnosisView from "../views/diagnosis/DiagnosisView.vue";
-import OnlineView from "../views/online/OnlineView.vue";
-import AbilityView from "../views/online/AbilityView.vue";
-import AllAbilityView from "../views/online/AllAbilityView.vue";
-import ResultView from "../views/online/ResultView.vue";
+import OnlineView from "../views/diagnosis/OnlineView.vue";
+import AbilityView from "../views/diagnosis/AbilityView.vue";
+import AllAbilityView from "../views/diagnosis/AllAbilityView.vue";
+import ResultView from "../views/diagnosis/ResultView.vue";
 
 import CartView from "../views/payment/CartView.vue";
 import OrderView from "../views/payment/OrderView.vue";
 
-import ProgramView from "../views/program/ProgramView.vue";
-import MarketplaceView from "../views/marketplace/MarketplaceView.vue";
-import MarketplaceDetailView from "../views/marketplace/MarketplaceDetailView.vue";
+import OnlineProgramView from "../views/online/OnlineProgramView.vue";
+import TrainingView from "../views/training/TrainingView.vue";
 import MyView from "../views/my/MyView.vue";
 import PaymentView from "../views/my/PaymentView.vue";
 
@@ -66,6 +66,26 @@ const routes = [
         name: "DiagnosisView",
         component: DiagnosisView,
       },
+      {
+        path: "/diagnosis/online",
+        name: "OnlineView",
+        component: OnlineView,
+      },
+      {
+        path: "/diagnosis/ability",
+        name: "AbilityView",
+        component: AbilityView,
+      },
+      {
+        path: "/diagnosis/all-ability",
+        name: "AllAbilityView",
+        component: AllAbilityView,
+      },
+      {
+        path: "/diagnosis/result",
+        name: "ResultView",
+        component: ResultView,
+      },
     ],
   },
   {
@@ -76,41 +96,21 @@ const routes = [
     children: [
       {
         path: "/online",
-        name: "OnlineView",
-        component: OnlineView,
-      },
-      {
-        path: "/online/ability",
-        name: "AbilityView",
-        component: AbilityView,
-      },
-      {
-        path: "/online/all-ability",
-        name: "AllAbilityView",
-        component: AllAbilityView,
-      },
-      {
-        path: "/online/result",
-        name: "ResultView",
-        component: ResultView,
+        name: "OnlineProgramView",
+        component: OnlineProgramView,
       },
     ],
   },
   {
-    path: "/marketplace",
-    name: "MarketplaceLayout",
+    path: "/training",
+    name: "TrainingLayout",
     component: HomeLayout,
     redirect: "/marketplace",
     children: [
       {
-        path: "/marketplace",
-        name: "MarketplaceView",
-        component: MarketplaceView,
-      },
-      {
-        path: "/marketplace/detail",
-        name: "MarketplaceDetailView",
-        component: MarketplaceDetailView,
+        path: "/training",
+        name: "TrainingView",
+        component: TrainingView,
       },
     ],
   },
@@ -134,8 +134,8 @@ const routes = [
   },
   {
     path: "/my",
-    name: "MypageLayout",
-    component: HomeLayout,
+    name: "MyPageLayout",
+    component: MyPageLayout,
     redirect: "/my",
     children: [
       {

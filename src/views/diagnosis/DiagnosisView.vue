@@ -1,10 +1,14 @@
 <template>
-  <div class="flex flex-col justify-center items-center background">
-    <h1 class="text-[2.2rem] text-white">
+  <div
+    class="flex flex-col justify-center items-center background md:px-0 xs:px-[2rem] min-h-[67vh]   "
+  >
+    <h1 class="sm:text-[2.2rem] xs:text-[1.5rem] text-white">
       진단을 제대로 하면 해법이 제대로 보입니다.
     </h1>
 
-    <div class="text-[1.3rem] text-white text-center mt-[2.5rem]">
+    <div
+      class="sm:text-[1.3rem] xs:text-[1.1rem] text-white text-center mt-[2.5rem]"
+    >
       <span class="text-[#FFA800]"
         >우리 조직이 과연 제대로 성과를 내고 있는게 맞는 건지 아닌지</span
       >
@@ -17,7 +21,7 @@
     </div>
     <button
       class="w-[24rem] h-[5rem] bg-primary rounded-[1rem] text-[white] text-[1.7rem] mt-[4.3rem]"
-      @click="$router.push('/online')"
+      @click="$router.push('/diagnosis/online')"
     >
       검사실시 >
     </button>

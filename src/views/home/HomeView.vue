@@ -17,23 +17,25 @@
     </section>
 
     <section
-      class="w-full min-h-[28rem] md:px-[8.8rem] sm:px-[2rem] pb-[5.7rem] bg-[#F1F1F1]"
+      class="w-full min-h-[28rem] lg:px-[8.8rem] xs:px-[2rem] pb-[5.7rem] bg-[#F1F1F1]"
     >
       <div
-        class="grid md:grid-cols-3 xs:grid-cols-1 justify-center items-center gap-[1.2rem] bg-white pl-[3.8rem] pr-[2.4rem]"
+        class="grid md:grid-cols-3 xs:grid-cols-1 gap-[1.2rem] bg-white pl-[3.8rem] pr-[2.4rem] py-[3rem]"
       >
         <div
           v-for="(item, index) in section2_datasets"
           :key="index"
-          class="w-full min-h-[17.5rem] h-auto flex justify-center items-center gap-[2rem]"
+          class="w-full h-auto flex lg:justify-center xs:justify-start items-start gap-[2rem]"
         >
           <img :src="item.img" alt="heritage" class="h-[7.4rem]" />
-          <div class="flex flex-col gap-[1.3rem]">
-            <b class="mt-[2.5rem]">
+          <div class="flex flex-col items-start gap-[1.3rem] text-[0.8rem]">
+            <b>
               {{ item.title }}
             </b>
             <p>{{ item.desc }}</p>
-            <button>바로가기 ></button>
+            <button class="text-[0.8rem] text-primary font-bold">
+              바로가기 >
+            </button>
           </div>
         </div>
       </div>
@@ -55,7 +57,7 @@
     </section>
 
     <section
-      class="w-full flex flex-col items-start bg-[#000] px-[1.5rem] pt-[4.4rem] pb-[7.85rem]"
+      class="w-full flex flex-col items-start bg-[#000] md:px-[7.5rem] xs:px-[2rem] pt-[4.4rem] pb-[7.85rem]"
     >
       <div
         class="flex justify-center items-center border-[1px] border-primary rounded-[3px] text-primary font-bold p-[0.8rem]"
@@ -82,7 +84,9 @@
         일부를 소개합니다.
       </h3>
 
-      <img src="/home/section.png" alt="section" />
+      <div class="w-full flex justify-center">
+        <img src="/home/section.png" alt="section" />
+      </div>
     </section>
   </div>
 </template>

@@ -1,14 +1,14 @@
 <template>
   <div
-    class="flex flex-col items-center bg-[#E9E3E3] md:px-[120px] pt-[5.1rem] pb-[5.8rem]"
+    class="flex flex-col items-center bg-[#E9E3E3] md:px-[120px] xs:px-[2rem] pt-[5.1rem] pb-[5.8rem]"
   >
     <div
-      class="w-full flex justify-center items-center text-[3rem] text-[#630606] font-bold relative"
+      class="w-full flex justify-center items-center md:text-[3rem] xs:text-[2rem] text-[#630606] font-bold relative"
     >
       <img
         src="/online/arrow.png"
         alt="arrow"
-        class="absolute left-0 cursor-pointer"
+        class="absolute left-0 cursor-pointer w-[2.4rem]"
         @click="$router.back()"
       />
       역량 검사
@@ -44,7 +44,7 @@
     </div>
 
     <div
-      class="w-full h-[6.8rem] flex items-center text-[1.9rem] font-bold bg-white rounded-[9px] mt-[4.7rem] px-[2.7rem]"
+      class="w-full h-[6.8rem] flex items-center md:text-[1.9rem] xs:text-[1.3rem] font-bold bg-white rounded-[9px] mt-[4.7rem] px-[2.7rem]"
     >
       Q. 나는 다음에 관심이 있다.
     </div>
@@ -53,7 +53,7 @@
       <div
         v-for="(item, index) in test_datasets"
         :key="index"
-        class="w-full min-h-[9.1rem] h-auto flex justify-center items-center rounded-[1rem] px-[1rem] py-[3.8rem] text-[1.6rem] text-center font-bold cursor-pointer relative"
+        class="w-full min-h-[9.1rem] h-auto flex justify-center items-center rounded-[1rem] px-[1rem] py-[3.8rem] md:text-[1.6rem] xs:text-[1.2rem] text-center font-bold cursor-pointer relative"
         :class="
           test_datasets[index].is_check ? 'bg-primary text-white' : 'bg-white'
         "
@@ -77,13 +77,13 @@
       </button>
       <button
         class="w-[13rem] h-[5rem] flex justify-center items-center bg-[#B4696D] rounded-[1rem] text-[white] text-[1.7rem] mt-[4.3rem]"
-        @click="$router.push('/online/all-ability')"
+        @click="$router.push('/diagnosis/all-ability')"
       >
         다음
         <img
           src="/online/right-arrow.png"
           alt="right-arrow"
-          class="ml-[10px]"
+          class="ml-[10px] w-[1.3rem]"
         />
       </button>
     </div>

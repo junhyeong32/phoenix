@@ -12,32 +12,41 @@
     <!-- web nav -->
     <nav class="md:flex justify-center items-center xs:hidden">
       <router-link
-        :class="$router.currentRoute.value.path === '/home' && 'text-primary'"
+        :class="
+          $router.currentRoute.value.matched[0].path === '/' && 'text-primary'
+        "
         :to="'/home'"
         >홈</router-link
       >
       <router-link
         :class="
-          $router.currentRoute.value.path === '/diagnosis' && 'text-primary'
+          $router.currentRoute.value.matched[0].path === '/diagnosis' &&
+          'text-primary'
         "
         :to="'/diagnosis'"
         >온라인 진단</router-link
       >
       <router-link
-        :class="$router.currentRoute.value.path === '/online' && 'text-primary'"
+        :class="
+          $router.currentRoute.value.matched[0].path === '/online' &&
+          'text-primary'
+        "
         :to="'/online'"
         >온라인 프로그램</router-link
       >
       <router-link
         :class="
-          $router.currentRoute.value.path === '/marketplace' && 'text-primary'
+          $router.currentRoute.value.matched[0].path === '/training' &&
+          'text-primary'
         "
-        :to="'/marketplace'"
+        :to="'/training'"
         >훈련 프로그램</router-link
       >
       <router-link
         :to="'/my'"
-        :class="$router.currentRoute.value.path === '/my' && 'text-primary'"
+        :class="
+          $router.currentRoute.value.matched[0].path === '/my' && 'text-primary'
+        "
         >마이 페이지</router-link
       >
       <router-link :to="'/auth/signin'">
@@ -72,10 +81,9 @@
         @click="open = !open"
       />
       <router-link :to="'/home'">홈</router-link>
-      <router-link :to="'/diagnosis'">여행상품</router-link>
-      <router-link :to="'/online'">현지프로그램</router-link>
-      <router-link :to="'/marketplace'">직거래장터</router-link>
-      <router-link :to="'/inquiry'">상담문의</router-link>
+      <router-link :to="'/diagnosis'">온라인 진단</router-link>
+      <router-link :to="'/online'">온라인 프로그램</router-link>
+      <router-link :to="'/training'">훈련 프로그램</router-link>
       <router-link :to="'/my'">마이 페이지</router-link>
       <router-link :to="'/auth/signin'"> 로그인 </router-link>
       <router-link :to="'/auth/signup'"> 회원가입 </router-link>
@@ -108,9 +116,10 @@ export default {
   mounted() {},
 };
 </script>
-<style scpoed>
+<style scoped>
 a {
   font-size: 16px;
+  font-weight: bold;
 }
 
 nav {

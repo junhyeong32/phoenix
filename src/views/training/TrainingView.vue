@@ -21,7 +21,6 @@
             v-for="(item, index) in program_datasets"
             :key="index"
             class="flex flex-col gap-[0.8rem] relative cursor-pointer bg-white rounded-[18px]"
-            @click="$router.push('/marketplace/detail')"
           >
             <img :src="`/training/${index + 1}.png`" alt="program" class="" />
 

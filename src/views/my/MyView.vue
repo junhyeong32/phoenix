@@ -1,53 +1,56 @@
 <template>
-  <div class="flex flex-col justify-center items-center mt-[4.5rem]">
-    <h1 class="text-[2.57rem] font-bold">마이페이지</h1>
+  <div class="flex flex-col w-full">
+    <div class="flex gap-[12px] md:mt-0 xs:mt-[1rem]">
+      <button
+        class="px-[1.9rem] py-[0.9rem] text-[1.1rem] text-white rounded-[2.6rem]"
+        :class="menu === item ? 'bg-primary' : 'bg-[#B5B5B5]'"
+        @click="menu = item"
+        v-for="(item, index) in menu_datasets"
+        :key="index"
+      >
+        {{ item }}
+      </button>
+    </div>
 
     <div
-      class="w-full flex flex-col justify-center items-start md:px-[5rem] lg:px-[13.2rem] xs:px-[2rem] gap-[1.9rem] mt-[4.2rem]"
+      class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-[2rem] mt-[2.2rem]"
     >
       <div
-        class="w-full flex sm:flex-row xs:flex-col justify-between items-center sm:h-[87px] xs:h-[250px] menu-container"
+        v-for="(item, index) in program_datasets"
+        :key="index"
+        class="flex flex-col gap-[1.2rem] pb-[1.8rem] relative bg-white rounded-[18px]"
       >
-        <button
-          v-for="(item, index) in menu_datasets"
-          :key="index"
-          @click="() => $router.push(item.path)"
-          class="w-full sm:h-[50%] xs:h-[100%] border-[#C7C7C7] sm:border-l-[1px] sm:border-b-0"
-          :class="index !== 3 && 'xs:border-b-[1px]'"
-        >
-          {{ item.menu }}
-        </button>
-      </div>
+        <img :src="`/my/${index + 1}.png`" alt="lecture" class="" />
 
-      <div class="mt-[5.28rem]">
-        <h3 class="text-[1.4rem] font-bold">최근 구매 정보</h3>
-      </div>
-
-      <div class="w-full xs:overflow-scroll mb-[9.35rem]">
-        <table class="w-full">
-          <thead>
-            <tr>
-              <th>주문일자</th>
-              <th>상품명</th>
-              <th>결제금액</th>
-              <th>주문상세</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in purchase_datasets" :key="index">
-              <td align="center">
-                {{ moment(item.date).format("YYYY.MM.DD") }}
-              </td>
-              <td align="center">{{ item.product }}</td>
-              <td align="center">{{ item.price }}</td>
-              <td align="center">
-                <button class="w-[64px] h-[32px] border-[1px] border-[#000]">
-                  조회
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="flex flex-col justify-between h-full px-[1.4rem]">
+          <div class="flex flex-col gap-[7px]">
+            <div class="text-[1.1rem] mt-[6px] whitespace-pre-wrap">
+              {{ item.title }}
+            </div>
+            <b class="text-[1.3rem]">
+              {{ item.sub_title }}
+            </b>
+            <div class="text-[1rem] text-[#BFBFBF]">
+              {{ item.time }}
+            </div>
+            <div
+              class="text-end text-[1rem] text-[#6200AE] my-[0.8rem]"
+              v-if="!item.is_finish"
+            >
+              {{ item.date }}
+            </div>
+          </div>
+          <button
+            class="w-full h-[3rem] text-[0.9rem] text-white"
+            :class="!item.is_finish ? 'bg-primary' : 'bg-[#B5B5B5]'"
+          >
+            {{
+              item.is_finish
+                ? "수강기간 만료"
+                : `수강하기(${item.percente}/100%)`
+            }}
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -69,43 +72,24 @@ export default {
   data() {
     return {
       moment: moment,
-      menu_datasets: [
+      menu: "전체",
+      menu_datasets: ["전체", "수강중", "수강완료"],
+      program_datasets: [
         {
-          menu: "결제내역",
-          path: "/my/payment",
+          title: "입문자 추천!\n마무리 기술 클리닉",
+          sub_title: "영업 펀더멘탈 만들기",
+          time: "총 6시간 33분",
+          is_finish: false,
+          date: "29일 남음",
+          percente: 0,
         },
         {
-          menu: "장바구니",
-          path: "/my/cart",
-        },
-        {
-          menu: "배송지 관리",
-          path: "/my/delivery",
-        },
-        {
-          menu: "회원정보",
-          path: "/my/modify",
-        },
-      ],
-
-      purchase_datasets: [
-        {
-          id: 1,
-          date: new Date(),
-          product: "여행상품 이름",
-          price: "20,270원",
-        },
-        {
-          id: 2,
-          date: new Date(),
-          product: "여행상품 이름",
-          price: "20,270원",
-        },
-        {
-          id: 3,
-          date: new Date(),
-          product: "여행상품 이름",
-          price: "20,270원",
+          title: "성과를 만들어내는 리더들이 쓰는 방법",
+          sub_title: "리더는 성과다",
+          time: "총 4시간 12분",
+          is_finish: true,
+          date: "",
+          percente: 0,
         },
       ],
     };
